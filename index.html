@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Just In Time Furnace Inc. | Heating, Air Conditioning &amp; Duct Cleaning in Calgary</title>
+<meta name="description" content="Just In Time Furnace Inc. offers furnace and air duct cleaning, furnace and AC installation and repair, humidifiers, hot water and gas fitting in Calgary. Open 24 hours, 7 days a week. Free estimates.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1d3a6e; --navy-d:#12284f; --ink:#0f1d36;
+  --red:#c1202f; --red-d:#9e1724;
+  --steel:#939598; --mist:#f5f5f5; --line:#e2e4e8;
+  --amber:#f2a20c;
+  --head:'Archivo',system-ui,sans-serif; --body:'Public Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:#2b3445;background:#fff;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1240px,92%);margin-inline:auto}
+h1,h2,h3,h4{font-family:var(--head);color:var(--ink);line-height:1.02;font-stretch:72%;font-weight:800;letter-spacing:-.005em}
+.kicker{font-family:var(--head);font-stretch:100%;font-weight:700;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);display:inline-flex;align-items:center;gap:.6rem}
+.kicker i{display:inline-flex;gap:4px}
+.kicker i b{width:6px;height:6px;border-radius:50%;background:var(--red)}
+.kicker i b:nth-child(2){background:var(--navy)}
+.kicker i b:nth-child(3){background:var(--steel)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--head);font-stretch:100%;font-weight:700;font-size:.95rem;letter-spacing:.02em;padding:1rem 1.5rem;border-radius:4px;transition:.25s;cursor:pointer;border:0}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-d)}
+.btn-line{border:2px solid var(--navy);color:var(--navy)}
+.btn-line:hover{background:var(--navy);color:#fff}
+.btn-white{background:#fff;color:var(--navy)}
+.btn svg{width:18px;height:18px}
+
+/* top bar */
+.topbar{background:var(--ink);color:#c9d2e3;font-size:.82rem}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding:.55rem 0;gap:1rem;flex-wrap:wrap}
+.topbar .live{display:flex;align-items:center;gap:.5rem;color:#fff;font-weight:600}
+.pulse{width:8px;height:8px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 0 rgba(61,220,132,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
+.topbar .meta{display:flex;gap:1.6rem}
+.topbar .meta a:hover{color:#fff}
+
+/* header */
+header.site{background:#fff;position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:84px;gap:1.5rem}
+.logo img{height:58px;width:auto}
+nav.main{display:flex;gap:.2rem;align-items:center}
+nav.main>div{position:relative}
+nav.main>div>a{display:block;padding:.6rem .55rem;font-weight:600;font-size:.86rem;color:var(--ink);white-space:nowrap}
+nav.main>div>a:hover{color:var(--red)}
+nav.main .drop{position:absolute;top:100%;left:0;min-width:210px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--red);padding:.5rem 0;opacity:0;visibility:hidden;transform:translateY(6px);transition:.2s;box-shadow:0 18px 40px -18px rgba(15,29,54,.35)}
+nav.main>div:hover .drop{opacity:1;visibility:visible;transform:none}
+nav.main .drop a{display:block;padding:.45rem 1rem;font-size:.88rem}
+nav.main .drop a:hover{background:var(--mist);color:var(--red)}
+.head-cta{display:flex;align-items:center;gap:1rem}
+.head-phone{white-space:nowrap;font-family:var(--head);font-stretch:85%;font-weight:800;font-size:1.25rem;color:var(--navy);line-height:1.1}
+.head-phone small{display:block;font-family:var(--body);font-weight:500;font-size:.7rem;color:var(--steel);letter-spacing:.08em;text-transform:uppercase}
+.burger{display:none;background:none;border:0;cursor:pointer}
+.burger span{display:block;width:26px;height:2px;background:var(--ink);margin:6px 0}
+
+/* hero */
+.hero{background:var(--mist);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;align-items:end;min-height:640px;position:relative}
+.hero-copy{padding:5rem 0 9rem;position:relative;z-index:2}
+.hero h1{font-size:clamp(3rem,6.4vw,5.9rem);text-transform:uppercase;margin:1.2rem 0 1.4rem}
+.hero h1 .r{color:var(--red)}
+.hero h1 .n{color:var(--navy)}
+.hero h1 em{font-style:normal;display:block;font-size:.42em;font-stretch:100%;color:var(--steel);letter-spacing:.02em;margin-top:.6rem}
+.hero p.lead{max-width:520px;font-size:1.08rem;color:#4a5466}
+.hero .actions{display:flex;gap:.9rem;margin-top:2rem;flex-wrap:wrap}
+.hero-visual{position:relative;align-self:stretch;display:flex;align-items:flex-end;justify-content:center}
+.hero-visual .dial{position:absolute;left:2%;top:3%;width:92%;max-width:none}
+.hero-visual img.tech{position:relative;z-index:2;width:112%;max-width:680px;margin-right:-10%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 14%);mask-image:linear-gradient(90deg,transparent 0,#000 14%)}
+.rebate{position:absolute;z-index:3;left:-12%;bottom:7%;display:flex;align-items:center}
+.hex{width:150px;height:166px;background:var(--red);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;position:relative;z-index:2}
+.hex small{font-family:var(--head);font-weight:700;font-stretch:100%;font-size:.85rem}
+.hex strong{font-family:var(--head);font-stretch:80%;font-weight:900;font-size:2.5rem;line-height:1}
+.rebate .pill{background:var(--amber);color:var(--ink);font-size:.8rem;font-weight:600;line-height:1.35;padding:.9rem 1.2rem .9rem 2.2rem;margin-left:-1.6rem;border-radius:0 40px 40px 0;max-width:220px}
+
+/* quick book */
+.quick{position:relative;z-index:5;margin-top:-4.5rem}
+.quick-card{background:var(--navy);color:#fff;border-radius:6px;display:grid;grid-template-columns:auto 1fr;overflow:hidden;box-shadow:0 30px 60px -30px rgba(15,29,54,.6)}
+.quick-card .label{background:var(--red);padding:1.6rem 2rem;display:flex;flex-direction:column;justify-content:center}
+.quick-card .label h3{color:#fff;font-size:1.7rem;text-transform:uppercase}
+.quick-card .label span{font-size:.82rem;opacity:.85}
+.quick-card form{display:grid;grid-template-columns:1fr 1fr 1.2fr auto;gap:.8rem;padding:1.5rem 1.8rem;align-items:center}
+.field{display:flex;flex-direction:column;gap:.3rem}
+.field label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;opacity:.75;font-weight:600}
+.field input,.field select,.field textarea{font:inherit;font-size:.95rem;padding:.8rem .9rem;border-radius:4px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:#fff;width:100%}
+.field select option{color:var(--ink)}
+.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.55)}
+.quick-card .btn{align-self:end;height:50px}
+
+/* trust ribbon */
+.ribbon{padding:3.2rem 0 2.4rem}
+.ribbon ul{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ribbon li{padding:1.4rem 1.2rem;display:flex;gap:.8rem;align-items:center;font-weight:600;color:var(--ink);font-size:.92rem;line-height:1.3}
+.ribbon li+li{border-left:1px solid var(--line)}
+.ribbon svg{flex:none;width:30px;height:30px;color:var(--red)}
+
+/* duct package */
+.package{padding:5rem 0 6rem}
+.package .wrap{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
+.pkg-media{position:relative}
+.pkg-media img{width:100%;aspect-ratio:4/3;object-fit:cover;clip-path:polygon(0 0,100% 0,100% 82%,82% 100%,0 100%)}
+.pkg-media .tag{position:absolute;left:-1.2rem;top:2rem;background:var(--ink);color:#fff;padding:1rem 1.3rem;font-family:var(--head);font-stretch:85%;font-weight:800;font-size:1.05rem;text-transform:uppercase;line-height:1.1}
+.pkg-media .tag small{display:block;font-family:var(--body);font-weight:500;font-size:.72rem;letter-spacing:.1em;color:var(--amber)}
+.package h2{font-size:clamp(2.4rem,4.2vw,3.6rem);text-transform:uppercase;margin:1rem 0 1.2rem}
+.package h2 span{color:var(--red)}
+.package p{color:#4a5466}
+.benefits{list-style:none;margin:1.8rem 0;display:grid;gap:1rem}
+.benefits li{display:grid;grid-template-columns:44px 1fr;gap:1rem;align-items:start}
+.benefits .n{width:44px;height:44px;border:2px solid var(--navy);border-radius:50%;display:grid;place-items:center;font-family:var(--head);font-weight:800;color:var(--navy)}
+.benefits strong{display:block;color:var(--ink);font-size:1rem}
+.benefits span{font-size:.93rem;color:#5a6476}
+.timecheck{background:var(--mist);border-left:4px solid var(--red);padding:1.1rem 1.3rem;font-size:.93rem;margin-bottom:1.8rem}
+.timecheck b{color:var(--ink)}
+
+/* install ticker */
+.ticker{background:var(--ink);color:#fff;overflow:hidden;padding:1.1rem 0;white-space:nowrap}
+.ticker .track{display:inline-flex;gap:2.5rem;animation:tick 38s linear infinite;font-family:var(--head);font-stretch:75%;font-weight:800;font-size:1.6rem;text-transform:uppercase}
+.ticker .track span{display:inline-flex;align-items:center;gap:2.5rem}
+.ticker .track span::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--red)}
+.ticker .track span:nth-child(3n+2)::after{background:var(--steel)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* services index */
+.services{padding:6rem 0}
+.svc-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:3rem}
+.svc-head h2{font-size:clamp(2.6rem,5vw,4.4rem);text-transform:uppercase;max-width:640px;margin-top:.9rem}
+.svc-head p{max-width:400px;color:#4a5466}
+.svc-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:3.5rem;align-items:start}
+.svc-list{border-top:2px solid var(--ink)}
+.svc-row{display:grid;grid-template-columns:64px 1fr auto;gap:1.2rem;padding:1.5rem 0;border-bottom:1px solid var(--line);align-items:center;cursor:pointer;transition:.25s}
+.svc-row .no{font-family:var(--head);font-weight:700;color:var(--steel);font-size:.9rem;letter-spacing:.1em}
+.svc-row h3{font-size:2rem;text-transform:uppercase;transition:.25s}
+.svc-row .subs{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.55rem}
+.svc-row .subs a{font-size:.8rem;padding:.25rem .65rem;border:1px solid var(--line);border-radius:30px;color:#4a5466;background:#fff}
+.svc-row .subs a:hover{border-color:var(--red);color:var(--red)}
+.svc-row .go{display:flex;flex-direction:column;align-items:flex-end;gap:.35rem;font-size:.82rem;font-weight:700;color:var(--navy);white-space:nowrap}
+.svc-row .go a.q{color:var(--red)}
+.svc-row:hover h3,.svc-row.on h3{color:var(--red)}
+.svc-row.on{padding-left:.6rem;border-bottom-color:var(--ink)}
+.svc-preview{position:sticky;top:110px}
+.svc-preview .frame{position:relative;overflow:hidden;border-radius:4px;aspect-ratio:4/3;background:var(--navy)}
+.svc-preview img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s, transform .8s;transform:scale(1.05)}
+.svc-preview img.on{opacity:1;transform:none}
+.svc-preview .cap{margin-top:1rem;display:flex;justify-content:space-between;align-items:center;font-size:.9rem}
+.svc-preview .cap b{font-family:var(--head);font-stretch:80%;font-size:1.3rem;text-transform:uppercase;color:var(--ink)}
+.estimate-card{margin-top:1.4rem;background:var(--mist);padding:1.4rem;border-radius:4px;font-size:.92rem}
+.estimate-card strong{display:block;font-family:var(--head);font-stretch:85%;font-size:1.3rem;color:var(--ink);text-transform:uppercase;margin-bottom:.3rem}
+.estimate-card .btn{margin-top:1rem;width:100%;justify-content:center}
+
+/* split audience */
+.split{padding:0 0 6rem}
+.split .wrap{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.aud{position:relative;border-radius:6px;overflow:hidden;min-height:520px;display:flex;align-items:flex-end;color:#fff}
+.aud img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.aud:hover img{transform:scale(1.04)}
+.aud::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,29,54,0) 20%,rgba(15,29,54,.92) 78%);z-index:1}
+.aud .in{position:relative;z-index:2;padding:2.4rem}
+.aud .lbl{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--amber)}
+.aud h3{color:#fff;font-size:2.6rem;text-transform:uppercase;margin:.5rem 0 1rem}
+.aud ul{list-style:none;display:grid;gap:.45rem;margin-bottom:1.6rem;font-size:.95rem}
+.aud li{display:flex;gap:.6rem;align-items:flex-start}
+.aud li::before{content:"";flex:none;width:7px;height:7px;margin-top:.55rem;border-radius:50%;background:var(--red)}
+.aud .row{display:flex;gap:.7rem;flex-wrap:wrap}
+.aud .btn-ghost{border:1.5px solid rgba(255,255,255,.6);color:#fff}
+.aud .btn-ghost:hover{background:#fff;color:var(--ink)}
+
+/* energy */
+.energy{background:var(--navy);color:#dbe3f1;position:relative;overflow:hidden}
+.energy .img{position:absolute;inset:0 0 0 52%;}
+.energy .img img{width:100%;height:100%;object-fit:cover}
+.energy .img::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 0%,rgba(29,58,110,0) 35%);z-index:1}
+.energy .wrap{position:relative;z-index:2;padding:6rem 0}
+.energy .box{max-width:600px}
+.energy h2{color:#fff;font-size:clamp(2.6rem,4.8vw,4.2rem);text-transform:uppercase;margin:1rem 0 1.3rem}
+.energy .kicker{color:var(--amber)}
+.energy .kicker i b{background:var(--amber)}
+.drains{margin:2.2rem 0;display:grid;gap:0}
+.drain{display:grid;grid-template-columns:90px 1fr;padding:1.2rem 0;border-top:1px solid rgba(255,255,255,.15)}
+.drain .t{font-family:var(--head);font-stretch:70%;font-weight:900;font-size:2.6rem;color:rgba(255,255,255,.25);line-height:1}
+.drain b{color:#fff;display:block;font-size:1.02rem;margin-bottom:.2rem}
+.drain p{font-size:.92rem}
+.energy .actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.energy .rebate-line{display:flex;align-items:center;gap:1rem;margin-top:2rem;font-size:.9rem}
+.energy .mini-hex{width:62px;height:70px;background:var(--red);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:grid;place-items:center;font-family:var(--head);font-weight:900;color:#fff;font-size:.95rem;flex:none}
+
+/* products */
+.products{padding:5rem 0 1rem}
+.products .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.prod{border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:.25s;background:#fff}
+.prod:hover{border-color:var(--navy);transform:translateY(-4px);box-shadow:0 24px 40px -28px rgba(15,29,54,.5)}
+.prod img{aspect-ratio:16/10;object-fit:cover;width:100%}
+.prod .b{padding:1.4rem 1.5rem;display:flex;justify-content:space-between;align-items:center}
+.prod h3{font-size:1.6rem;text-transform:uppercase}
+.prod .arrow{width:42px;height:42px;border-radius:50%;background:var(--mist);display:grid;place-items:center;color:var(--red);transition:.25s}
+.prod:hover .arrow{background:var(--red);color:#fff}
+
+/* reviews */
+.reviews{padding:6rem 0;overflow:hidden}
+.rev-top{display:grid;grid-template-columns:auto 1fr auto;gap:3rem;align-items:end;margin-bottom:3rem}
+.score{font-family:var(--head);font-stretch:70%;font-weight:900;font-size:7rem;line-height:.85;color:var(--navy)}
+.score small{display:block;font-family:var(--body);font-weight:600;font-size:.8rem;color:var(--steel);letter-spacing:.06em;margin-top:.6rem}
+.stars{color:var(--amber);letter-spacing:2px;font-size:1.05rem}
+.rev-top h2{font-size:clamp(2.2rem,4vw,3.4rem);text-transform:uppercase;margin-top:.8rem}
+.rev-rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(300px,1fr);gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:1.2rem;scrollbar-width:thin}
+.rev{scroll-snap-align:start;background:var(--mist);border-radius:6px;padding:1.8rem;display:flex;flex-direction:column;justify-content:space-between;min-height:250px;position:relative}
+.rev:nth-child(3n+2){background:var(--ink);color:#c9d2e3}
+.rev:nth-child(3n+2) blockquote{color:#fff}
+.rev blockquote{font-family:var(--head);font-stretch:88%;font-weight:700;font-size:1.45rem;line-height:1.2;color:var(--ink);margin:.8rem 0 1.2rem}
+.rev .who{display:flex;justify-content:space-between;align-items:center;font-size:.86rem;font-weight:600}
+.rev .who span{font-weight:500;opacity:.7;font-size:.78rem}
+.rev .mark{position:absolute;right:1.4rem;top:1rem;font-family:Georgia,serif;font-size:4rem;line-height:1;color:var(--red);opacity:.35}
+.rail-nav{display:flex;gap:.6rem}
+.rail-nav button{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--ink);background:#fff;cursor:pointer;font-size:1.1rem;color:var(--ink)}
+.rail-nav button:hover{background:var(--ink);color:#fff}
+
+/* faq */
+.faq{background:var(--mist);padding:6rem 0}
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem;align-items:start}
+.faq-side{position:sticky;top:120px}
+.faq-side h2{font-size:clamp(2.4rem,4.4vw,3.8rem);text-transform:uppercase;margin:1rem 0 1.2rem}
+.faq-side p{color:#4a5466;margin-bottom:1.6rem}
+details{background:#fff;border-radius:4px;margin-bottom:.7rem;border:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:1.25rem 1.4rem;display:flex;justify-content:space-between;gap:1rem;align-items:center;font-weight:700;color:var(--ink)}
+summary::-webkit-details-marker{display:none}
+summary .tg{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);display:block;font-weight:700;margin-bottom:.2rem}
+summary .pm{flex:none;width:32px;height:32px;border-radius:50%;background:var(--mist);display:grid;place-items:center;transition:.25s;font-size:1.2rem;color:var(--navy)}
+details[open] summary .pm{transform:rotate(45deg);background:var(--red);color:#fff}
+details .a{padding:0 1.4rem 1.3rem;color:#4a5466;font-size:.95rem}
+
+/* contact */
+.contact{padding:6rem 0}
+.contact .wrap{display:grid;grid-template-columns:.9fr 1.1fr;border-radius:8px;overflow:hidden;box-shadow:0 40px 80px -50px rgba(15,29,54,.6)}
+.c-info{background:var(--ink);color:#c9d2e3;padding:3.2rem;display:flex;flex-direction:column;position:relative}
+.c-info h2{color:#fff;font-size:3rem;text-transform:uppercase;margin:1rem 0 1.6rem}
+.c-info .kicker{color:var(--amber)}
+.c-info .kicker i b{background:var(--amber)}
+.c-list{list-style:none;display:grid;gap:1.2rem;margin-bottom:2rem}
+.c-list li{display:grid;grid-template-columns:42px 1fr;gap:.9rem;align-items:center}
+.c-list .ic{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.07);display:grid;place-items:center;color:var(--amber)}
+.c-list .ic svg{width:18px;height:18px}
+.c-list small{display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;opacity:.6}
+.c-list a,.c-list b{color:#fff;font-weight:600}
+.van{margin-top:auto;background:#fff;border-radius:6px;padding:.6rem 1rem;display:flex;align-items:center;gap:1rem}
+.van img{width:58%}
+.van span{font-family:var(--head);font-stretch:80%;font-weight:800;color:var(--navy);font-size:1.25rem;line-height:1.05;text-transform:uppercase}
+.c-form{background:#fff;padding:3.2rem}
+.c-form h3{font-size:2.1rem;text-transform:uppercase;margin-bottom:.4rem}
+.c-form > p{color:#5a6476;margin-bottom:1.8rem}
+.c-form form{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.c-form .field label{opacity:1;color:var(--ink)}
+.c-form .field input,.c-form .field select,.c-form .field textarea{background:var(--mist);border:1px solid var(--line);color:var(--ink)}
+.c-form .field input::placeholder,.c-form .field textarea::placeholder{color:#8a93a3}
+.c-form .full{grid-column:1/-1}
+.c-form textarea{min-height:120px;resize:vertical}
+
+/* footer */
+footer{background:var(--mist);border-top:4px solid var(--navy)}
+.f-top{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:3rem;padding:4rem 0 3rem}
+.f-top img{height:70px;width:auto;margin-bottom:1.1rem}
+.f-top p{font-size:.9rem;color:#5a6476;max-width:290px}
+.f-top h4{font-size:1.15rem;text-transform:uppercase;margin-bottom:1rem;color:var(--navy)}
+.f-top ul{list-style:none;display:grid;gap:.45rem;font-size:.9rem}
+.f-top ul a:hover{color:var(--red)}
+.f-bot{background:var(--ink);color:#aeb8ca;font-size:.84rem}
+.f-bot .wrap{display:flex;justify-content:space-between;gap:1rem;padding:1.1rem 0;flex-wrap:wrap}
+.f-bot a{color:#fff}
+.f-bot a:hover{color:var(--amber)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+
+/* mobile call */
+.m-call{display:none}
+
+@media (max-width:1360px){.head-phone{display:none}}
+@media (max-width:1100px){
+  nav.main,.head-phone{display:none}
+  .burger{display:block}
+  nav.main.open{display:flex;flex-direction:column;align-items:stretch;position:absolute;top:84px;left:0;right:0;background:#fff;padding:1rem 4%;border-bottom:1px solid var(--line)}
+  nav.main.open .drop{display:none}
+  .quick-card{grid-template-columns:1fr}
+  .quick-card form{grid-template-columns:1fr 1fr}
+  .ribbon ul{grid-template-columns:repeat(3,1fr)}
+  .ribbon li:nth-child(4){border-left:0}
+  .ribbon li:nth-child(n+4){border-top:1px solid var(--line)}
+}
+@media (max-width:900px){
+  .topbar .meta a:not(:last-child){display:none}
+  .hero .wrap{grid-template-columns:1fr;min-height:0}
+  .hero-copy{padding:3.5rem 0 1rem}
+  .hero-visual img.tech{max-width:440px;width:100%;margin:0}
+  .hero h1{font-size:2.55rem}
+  .rebate{left:0;bottom:12%}
+  .hex{width:112px;height:124px}.hex strong{font-size:1.9rem}
+  .quick{margin-top:-1.5rem}
+  .package .wrap,.svc-grid,.split .wrap,.faq .wrap,.contact .wrap{grid-template-columns:1fr}
+  .svc-preview{display:none}
+  .svc-head{flex-direction:column;align-items:flex-start}
+  .energy .img{position:relative;inset:auto;height:280px}
+  .energy .img::before{background:linear-gradient(0deg,var(--navy),rgba(29,58,110,0) 50%)}
+  .energy .wrap{padding:3rem 0 4.5rem}
+  .products .wrap{grid-template-columns:1fr}
+  .rev-top{grid-template-columns:1fr;gap:1.2rem}
+  .faq-side{position:static}
+  .f-top{grid-template-columns:1fr 1fr}
+  .m-call{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:60}
+  .m-call a{flex:1;text-align:center;padding:1rem;font-weight:700;font-family:var(--head)}
+  .m-call a:first-child{background:var(--navy);color:#fff}
+  .m-call a:last-child{background:var(--red);color:#fff}
+  body{padding-bottom:56px}
+}
+@media (max-width:600px){
+  .quick-card form,.c-form form{grid-template-columns:1fr}
+  .ribbon ul{grid-template-columns:1fr 1fr}
+  .ribbon li{border-left:0!important;border-top:1px solid var(--line)}
+  .svc-row{grid-template-columns:40px 1fr}
+  .svc-row .go{grid-column:2;align-items:flex-start;flex-direction:row;gap:1rem}
+  .svc-row h3{font-size:1.6rem}
+  .aud{min-height:560px}
+  .c-info,.c-form{padding:2rem}
+  .f-top{grid-template-columns:1fr}
+  .score{font-size:5rem}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="live"><span class="pulse"></span>Open 24 Hours, 7 Days a Week</div>
+    <div class="meta">
+      <a href="https://maps.google.com/?q=320-65+Ave+SE+Unit+B+Calgary+AB+T2H+0R8" target="_blank" rel="noopener">320-65 Ave SE, Unit B, Calgary</a>
+      <a href="mailto:info@justintimefurnace.com">info@justintimefurnace.com</a>
+      <a href="tel:4033336666">403-333-6666</a>
+    </div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a href="https://justintimefurnace.com/" class="logo"><img src="images/logo.png" alt="Just In Time Heating, Air Conditioning and Duct Cleaning"></a>
+    <nav class="main" id="nav">
+      <div><a href="https://justintimefurnace.com/furnace/">Furnace</a>
+        <div class="drop">
+          <a href="https://justintimefurnace.com/furnace/furnaces/">Furnaces</a>
+          <a href="https://justintimefurnace.com/furnace/thermostats/">Thermostats</a>
+          <a href="https://justintimefurnace.com/furnace/installation/">Installation</a>
+          <a href="https://justintimefurnace.com/furnace/furnace-repair/">Furnace Repair</a>
+          <a href="https://justintimefurnace.com/furnace/furnace-cleaning/">Furnace Cleaning</a>
+        </div></div>
+      <div><a href="https://justintimefurnace.com/air-conditioning/">Air Conditioning</a>
+        <div class="drop">
+          <a href="https://justintimefurnace.com/air-conditioning/ac-installation/">AC Installation</a>
+          <a href="https://justintimefurnace.com/air-conditioning/ac-repair/">AC Repair</a>
+          <a href="https://justintimefurnace.com/air-conditioning/ac-tune-ups/">AC Tune Ups</a>
+        </div></div>
+      <div><a href="https://justintimefurnace.com/air-quality/">Air Quality</a>
+        <div class="drop">
+          <a href="https://justintimefurnace.com/air-quality/humidifiers/">Humidifiers</a>
+          <a href="https://justintimefurnace.com/air-quality/filters-air-cleaners/">Filters &amp; Air Cleaners</a>
+          <a href="https://justintimefurnace.com/air-quality/vents-ductwork/">Vents &amp; Ductwork</a>
+          <a href="https://justintimefurnace.com/air-quality/duct-cleaning/">Duct Cleaning</a>
+        </div></div>
+      <div><a href="https://justintimefurnace.com/hot-water/">Hot Water</a></div>
+      <div><a href="https://justintimefurnace.com/gas-fitting/">Gas Fitting</a></div>
+      <div><a href="https://justintimefurnace.com/reviews/">Reviews</a></div>
+      <div><a href="https://justintimefurnace.com/contact/faq/">FAQ</a></div>
+      <div><a href="https://justintimefurnace.com/contact/about-us/">About Us</a></div>
+      <div><a href="https://justintimefurnace.com/contact/">Contact</a></div>
+    </nav>
+    <div class="head-cta">
+      <a class="head-phone" href="tel:4033336666"><small>Call 24/7</small>403-333-6666</a>
+      <a class="btn btn-red" href="https://justintimefurnace.com/contact/request-a-quote/">Free Quote</a>
+      <button class="burger" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="kicker"><i><b></b><b></b><b></b></i>24 Hours Service &middot; Calgary, AB</span>
+      <h1><span class="n">Heating,</span> <span class="n">Air Conditioning</span> <span class="r">&amp; Duct Cleaning</span><em>in Calgary, done just in time.</em></h1>
+      <p class="lead">Welcome to Just In Time Furnace. Furnace and air duct cleaning, furnace and AC installation and repair, humidifiers and air quality products, with free estimates on every job and no hidden fees.</p>
+      <div class="actions">
+        <a class="btn btn-red" href="https://justintimefurnace.com/contact/request-a-quote/">Request a Free Quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-line" href="tel:4033336666">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          Call 403 333 6666</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg class="dial" viewBox="0 0 600 600" aria-hidden="true">
+        <g id="dots"></g>
+      </svg>
+      <img class="tech" src="images/technician.jpg" alt="Just In Time Furnace technician">
+      <div class="rebate">
+        <div class="hex"><small>Save up to</small><strong>$1500</strong></div>
+        <div class="pill">In dealer &amp; manufacturer rebates available for a new furnace or air conditioning install</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quick">
+  <div class="wrap">
+    <div class="quick-card">
+      <div class="label"><h3>Book a free estimate</h3><span>Homes to large commercial jobs</span></div>
+      <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Thanks, we\'ll call you'">
+        <div class="field"><label>Name</label><input type="text" placeholder="Your name" required></div>
+        <div class="field"><label>Phone</label><input type="tel" placeholder="403-" required></div>
+        <div class="field"><label>Service</label>
+          <select>
+            <option>Furnace &amp; Air Duct Cleaning</option>
+            <option>Furnace Installation / Repair</option>
+            <option>AC Installation / Repair</option>
+            <option>Humidifiers &amp; Air Quality</option>
+            <option>Hot Water</option>
+            <option>Gas Fitting</option>
+            <option>Drain Cleaning</option>
+          </select></div>
+        <button class="btn btn-red" type="submit">Get My Quote</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="ribbon">
+  <div class="wrap">
+    <ul class="rv">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Open 24 hours, 7 days a week</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg>Free estimates on all products &amp; services</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>No hidden fees</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>High ethical standards</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>Homes to large commercial</li>
+    </ul>
+  </div>
+</section>
+
+<section class="package" id="duct-cleaning">
+  <div class="wrap">
+    <div class="pkg-media rv">
+      <img src="images/duct-cleaning.jpg" alt="Air duct cleaning in a Calgary home">
+      <div class="tag"><small>Package</small>Furnace + Air Duct<br>Cleaning</div>
+    </div>
+    <div class="rv">
+      <span class="kicker"><i><b></b><b></b><b></b></i>Furnace and Air Duct Cleaning</span>
+      <h2>Clean ducts.<br><span>Easier breathing.</span></h2>
+      <p>Dust and grime build up in your ducts and restrict airflow, which is one of the most overlooked reasons a home costs more to heat. Our furnace and duct cleaning packages include a mid-efficiency furnace, for homes of any size and businesses too.</p>
+      <ul class="benefits">
+        <li><div class="n">01</div><div><strong>Better indoor air quality</strong><span>Especially for children, older adults, and anyone with allergies or asthma.</span></div></li>
+        <li><div class="n">02</div><div><strong>Better airflow, lower bills</strong><span>Your system moves air more easily and does not have to work as hard.</span></div></li>
+        <li><div class="n">03</div><div><strong>A longer furnace lifespan</strong><span>Yearly cleaning checks can prevent bigger repairs and delay replacement.</span></div></li>
+      </ul>
+      <div class="timecheck"><b>Is it time?</b> If it has been a year or more since your last cleaning, or you can see dust building up, it is time to book.</div>
+      <div style="display:flex;gap:.9rem;flex-wrap:wrap">
+        <a class="btn btn-red" href="https://justintimefurnace.com/contact/request-a-quote/">Book Duct Cleaning</a>
+        <a class="btn btn-line" href="https://justintimefurnace.com/air-quality/duct-cleaning/">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="track">
+    <span>Furnaces</span><span>Air Conditioners</span><span>Humidifiers</span><span>Air Cleaners</span><span>UV Lights</span><span>Vents &amp; Filters</span><span>Hot Water Tanks</span><span>Programmable Thermostats</span>
+    <span>Furnaces</span><span>Air Conditioners</span><span>Humidifiers</span><span>Air Cleaners</span><span>UV Lights</span><span>Vents &amp; Filters</span><span>Hot Water Tanks</span><span>Programmable Thermostats</span>
+  </div>
+</div>
+
+<section class="services">
+  <div class="wrap">
+    <div class="svc-head rv">
+      <div>
+        <span class="kicker"><i><b></b><b></b><b></b></i>Installation and Servicing</span>
+        <h2>Everything that keeps your home comfortable</h2>
+      </div>
+      <p>Professional installation, repair and servicing for furnaces, air conditioners, humidifiers, air cleaners, UV lights, vents and filters, hot water tanks and programmable thermostats.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-list" id="svcList">
+        <div class="svc-row on" data-img="0" data-name="Furnace">
+          <span class="no">01</span>
+          <div><h3>Furnace</h3>
+            <div class="subs"><a href="https://justintimefurnace.com/furnace/furnaces/">Furnaces</a><a href="https://justintimefurnace.com/furnace/thermostats/">Thermostats</a><a href="https://justintimefurnace.com/furnace/installation/">Installation</a><a href="https://justintimefurnace.com/furnace/furnace-repair/">Repair</a><a href="https://justintimefurnace.com/furnace/furnace-cleaning/">Cleaning</a></div></div>
+          <div class="go"><a href="https://justintimefurnace.com/furnace/">Learn more</a><a class="q" href="https://justintimefurnace.com/contact/request-a-quote/">Get a quote &rarr;</a></div>
+        </div>
+        <div class="svc-row" data-img="1" data-name="Air Conditioning">
+          <span class="no">02</span>
+          <div><h3>Air Conditioning</h3>
+            <div class="subs"><a href="https://justintimefurnace.com/air-conditioning/ac-installation/">AC Installation</a><a href="https://justintimefurnace.com/air-conditioning/ac-repair/">AC Repair</a><a href="https://justintimefurnace.com/air-conditioning/ac-tune-ups/">AC Tune Ups</a></div></div>
+          <div class="go"><a href="https://justintimefurnace.com/air-conditioning/">Learn more</a><a class="q" href="https://justintimefurnace.com/contact/request-a-quote/">Get a quote &rarr;</a></div>
+        </div>
+        <div class="svc-row" data-img="2" data-name="Air Quality">
+          <span class="no">03</span>
+          <div><h3>Air Quality</h3>
+            <div class="subs"><a href="https://justintimefurnace.com/air-quality/humidifiers/">Humidifiers</a><a href="https://justintimefurnace.com/air-quality/filters-air-cleaners/">Filters &amp; Air Cleaners</a><a href="https://justintimefurnace.com/air-quality/vents-ductwork/">Vents &amp; Ductwork</a><a href="https://justintimefurnace.com/air-quality/duct-cleaning/">Duct Cleaning</a></div></div>
+          <div class="go"><a href="https://justintimefurnace.com/air-quality/">Learn more</a><a class="q" href="https://justintimefurnace.com/contact/request-a-quote/">Get a quote &rarr;</a></div>
+        </div>
+        <div class="svc-row" data-img="3" data-name="Hot Water">
+          <span class="no">04</span>
+          <div><h3>Hot Water</h3>
+            <div class="subs"><a href="https://justintimefurnace.com/hot-water/">Installation &amp; Repair</a></div></div>
+          <div class="go"><a href="https://justintimefurnace.com/hot-water/">Learn more</a><a class="q" href="https://justintimefurnace.com/contact/request-a-quote/">Get a quote &rarr;</a></div>
+        </div>
+        <div class="svc-row" data-img="4" data-name="Gas Fitting">
+          <span class="no">05</span>
+          <div><h3>Gas Fitting</h3>
+            <div class="subs"><a href="https://justintimefurnace.com/gas-fitting/">Gas Fittings</a></div></div>
+          <div class="go"><a href="https://justintimefurnace.com/gas-fitting/">Learn more</a><a class="q" href="https://justintimefurnace.com/contact/request-a-quote/">Get a quote &rarr;</a></div>
+        </div>
+      </div>
+      <aside class="svc-preview">
+        <div class="frame">
+          <img class="on" src="images/furnace.jpg" alt="Furnace installation">
+          <img src="images/air-conditioning.jpg" alt="Air conditioning unit">
+          <img src="images/air-quality.jpg" alt="Humidifier and air quality products">
+          <img src="images/hot-water.jpg" alt="Hot water tank">
+          <img src="images/gas-fitting.jpg" alt="Gas fitting">
+        </div>
+        <div class="cap"><b id="capName">Furnace</b><span>Free estimates</span></div>
+        <div class="estimate-card">
+          <strong>Not sure what you need?</strong>
+          Free in-home estimates on all products and services. Call us any time, day or night.
+          <a class="btn btn-red" href="tel:4033336666">Call 403-333-6666</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="split">
+  <div class="wrap">
+    <div class="aud rv">
+      <img src="images/residential.jpg" alt="Residential duct cleaning in Calgary">
+      <div class="in">
+        <span class="lbl">Residential</span>
+        <h3>For your home</h3>
+        <ul>
+          <li>Homes of any size, cleaned of contaminants in ducts and vents</li>
+          <li>Furnace cleaning, repair and replacement</li>
+          <li>AC installation, repair and tune ups</li>
+        </ul>
+        <div class="row"><a class="btn btn-red" href="https://justintimefurnace.com/contact/request-a-quote/">Request a Quote</a><a class="btn btn-ghost" href="tel:4033336666">403-333-6666</a></div>
+      </div>
+    </div>
+    <div class="aud rv">
+      <img src="images/commercial.jpg" alt="Commercial duct cleaning">
+      <div class="in">
+        <span class="lbl">Commercial</span>
+        <h3>For your business</h3>
+        <ul>
+          <li>Offices, restaurants and similar businesses</li>
+          <li>A fresher, more comfortable space for staff and customers</li>
+          <li>Free estimate on jobs up to large commercial operations</li>
+        </ul>
+        <div class="row"><a class="btn btn-red" href="https://justintimefurnace.com/contact/request-a-quote/">Request a Quote</a><a class="btn btn-ghost" href="tel:4033336666">403-333-6666</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="energy">
+  <div class="img"><img src="images/energy-home.jpg" alt="Energy efficient Calgary home"></div>
+  <div class="wrap">
+    <div class="box rv">
+      <span class="kicker"><i><b></b><b></b><b></b></i>Energy Efficiency</span>
+      <h2>Let us make your home energy efficient</h2>
+      <p>Choosing the right furnace or air conditioner has a direct effect on your energy bills. Here is where most homes lose money.</p>
+      <div class="drains">
+        <div class="drain"><span class="t">01</span><div><b>The wrong unit</b><p>A furnace or AC that is not the right fit for your home costs more to run.</p></div></div>
+        <div class="drain"><span class="t">02</span><div><b>Older or poorly maintained units</b><p>Servicing and repair bring an ageing system back to efficient running.</p></div></div>
+        <div class="drain"><span class="t">03</span><div><b>Dusty, restricted ductwork</b><p>Furnace and air duct cleaning is an often overlooked energy saver.</p></div></div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-red" href="https://justintimefurnace.com/contact/request-a-quote/">Request a Free Quote</a>
+        <a class="btn btn-white" href="tel:4033336666">Call 403-333-6666</a>
+      </div>
+      <div class="rebate-line"><div class="mini-hex">$1500</div><span>Save up to $1500 in dealer &amp; manufacturer rebates on a new furnace or air conditioning install.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="products">
+  <div class="wrap">
+    <a class="prod rv" href="https://justintimefurnace.com/hot-water/">
+      <img src="images/hot-water.jpg" alt="Heating products">
+      <div class="b"><h3>Heating Products</h3><span class="arrow">&rarr;</span></div>
+    </a>
+    <a class="prod rv" href="https://justintimefurnace.com/air-conditioning/">
+      <img src="images/air-conditioning.jpg" alt="AC products">
+      <div class="b"><h3>AC Products</h3><span class="arrow">&rarr;</span></div>
+    </a>
+    <a class="prod rv" href="https://justintimefurnace.com/drain-cleaning-plumbing/drain-cleaning/">
+      <img src="images/drain-cleaning.jpg" alt="Drain cleaning">
+      <div class="b"><h3>Drain Cleaning</h3><span class="arrow">&rarr;</span></div>
+    </a>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="wrap">
+    <div class="rev-top rv">
+      <div class="score">5.0<small><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><br>Customer rating</small></div>
+      <div>
+        <span class="kicker"><i><b></b><b></b><b></b></i>Reviews</span>
+        <h2>On time, every time. Our customers say it best.</h2>
+      </div>
+      <div class="rail-nav">
+        <button onclick="rail(-1)" aria-label="Previous">&larr;</button>
+        <button onclick="rail(1)" aria-label="Next">&rarr;</button>
+      </div>
+    </div>
+    <div class="rev-rail" id="rail">
+      <div class="rev"><span class="mark">&ldquo;</span><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>They always show up on time.</blockquote><div class="who">Shawn <span>Repeat customer</span></div></div>
+      <div class="rev"><span class="mark">&ldquo;</span><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>They always reconfirm appointments with you.</blockquote><div class="who">Harold W. <span>Duct cleaning &amp; AC</span></div></div>
+      <div class="rev"><span class="mark">&ldquo;</span><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>He was ON TIME, courteous and did a great job.</blockquote><div class="who">Bonnie W. <span>Calgary</span></div></div>
+      <div class="rev"><span class="mark">&ldquo;</span><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>Above any expectations and very professional.</blockquote><div class="who">Jay F. <span>Calgary</span></div></div>
+      <div class="rev"><span class="mark">&ldquo;</span><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>I can breathe easier now that all the dust is out of my vents!</blockquote><div class="who">Ramgstyle <span>Duct cleaning</span></div></div>
+      <div class="rev"><span class="mark">&ldquo;</span><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>Very professional, showed up on time.</blockquote><div class="who">Charleigh H. <span>Furnace</span></div></div>
+      <div class="rev"><span class="mark">&ldquo;</span><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>They were professional, showed great care and concern for our cats.</blockquote><div class="who">Ruth L. <span>Calgary</span></div></div>
+    </div>
+    <div style="margin-top:1.6rem"><a class="btn btn-line" href="https://justintimefurnace.com/reviews/">Read all reviews</a></div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="faq-side rv">
+      <span class="kicker"><i><b></b><b></b><b></b></i>FAQ</span>
+      <h2>Questions we hear a lot</h2>
+      <p>Pricing, warranty, maintenance and more. If your question is not here, call or email us any time.</p>
+      <a class="btn btn-line" href="https://justintimefurnace.com/contact/faq/">See all FAQs</a>
+    </div>
+    <div class="rv">
+      <details open><summary><div><span class="tg">Pricing</span>How much does a furnace or air conditioner cost?</div><span class="pm">+</span></summary><div class="a">We offer free in-home estimates. Call us for more information and we will find the right fit for your home.</div></details>
+      <details><summary><div><span class="tg">Warranty</span>What does the warranty cover?</div><span class="pm">+</span></summary><div class="a">Air conditioning installs carry a 10-year warranty with parts also covered for 10 years, as long as yearly maintenance is done by Just In Time.</div></details>
+      <details><summary><div><span class="tg">Care &amp; Maintenance</span>Why is regular maintenance important?</div><span class="pm">+</span></summary><div class="a">Routine maintenance helps your furnace or air conditioner last longer and keeps energy costs under control.</div></details>
+      <details><summary><div><span class="tg">HVAC System</span>When should I change my air filter?</div><span class="pm">+</span></summary><div class="a">Every two to three months. Your filter is in or next to your HVAC unit, and we sell replacement filters.</div></details>
+      <details><summary><div><span class="tg">Humidifier</span>Do I need a humidifier?</div><span class="pm">+</span></summary><div class="a">Yes, in Alberta they are a must. A humidifier adds moisture that is good for your skin and wood, reduces static and improves air quality.</div></details>
+      <details><summary><div><span class="tg">Heating</span>When is the best time to buy a new furnace?</div><span class="pm">+</span></summary><div class="a">Spring or summer is the ideal time to purchase and install a new furnace.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap rv">
+    <div class="c-info">
+      <span class="kicker"><i><b></b><b></b><b></b></i>Contact Us</span>
+      <h2>We're up when you are</h2>
+      <ul class="c-list">
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><div><small>Phone</small><a href="tel:4033336666">403-333-6666</a></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></span><div><small>Email</small><a href="mailto:info@justintimefurnace.com">info@justintimefurnace.com</a></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><div><small>Address</small><b>320-65 Ave SE, Unit B, Calgary, AB T2H 0R8</b></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><small>Hours</small><b>Open 24 hours, 7 days a week</b></div></li>
+      </ul>
+      <div class="van"><img src="images/truck-van.png" alt="Just In Time Furnace service truck"><span>Breathe<br>clean air</span></div>
+    </div>
+    <div class="c-form">
+      <h3>Request a free quote</h3>
+      <p>Tell us what you need and we will get back to you with a free estimate.</p>
+      <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Thanks, we\'ll be in touch'">
+        <div class="field"><label>Name</label><input type="text" placeholder="Full name" required></div>
+        <div class="field"><label>Phone</label><input type="tel" placeholder="403-" required></div>
+        <div class="field"><label>Email</label><input type="email" placeholder="you@email.com"></div>
+        <div class="field"><label>Service</label>
+          <select>
+            <option>Furnace &amp; Air Duct Cleaning</option>
+            <option>Furnace Installation / Repair</option>
+            <option>AC Installation / Repair</option>
+            <option>Humidifiers &amp; Air Quality</option>
+            <option>Hot Water</option>
+            <option>Gas Fitting</option>
+            <option>Drain Cleaning</option>
+          </select></div>
+        <div class="field full"><label>Message</label><textarea placeholder="Tell us about your home or business"></textarea></div>
+        <div class="full"><button class="btn btn-red" type="submit">Send Request</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap f-top">
+    <div>
+      <img src="images/logo.png" alt="Just In Time Furnace Inc.">
+      <p>Heating, air conditioning and duct cleaning in Calgary. Open 24 hours, 7 days a week.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="https://justintimefurnace.com/furnace/">Furnace</a></li>
+        <li><a href="https://justintimefurnace.com/air-conditioning/">Air Conditioning</a></li>
+        <li><a href="https://justintimefurnace.com/air-quality/">Air Quality</a></li>
+        <li><a href="https://justintimefurnace.com/air-quality/duct-cleaning/">Duct Cleaning</a></li>
+        <li><a href="https://justintimefurnace.com/hot-water/">Hot Water</a></li>
+        <li><a href="https://justintimefurnace.com/gas-fitting/">Gas Fitting</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="https://justintimefurnace.com/contact/about-us/">About Us</a></li>
+        <li><a href="https://justintimefurnace.com/reviews/">Reviews</a></li>
+        <li><a href="https://justintimefurnace.com/contact/faq/">FAQ</a></li>
+        <li><a href="https://justintimefurnace.com/contact/request-a-quote/">Request a Quote</a></li>
+        <li><a href="https://justintimefurnace.com/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Get in touch</h4>
+      <ul>
+        <li><a href="tel:4033336666">403-333-6666</a></li>
+        <li><a href="mailto:info@justintimefurnace.com">info@justintimefurnace.com</a></li>
+        <li>320-65 Ave SE, Unit B<br>Calgary, AB T2H 0R8</li>
+        <li>Open 24 hours, 7 days a week</li>
+      </ul>
+    </div>
+  </div>
+  <div class="f-bot">
+    <div class="wrap">
+      <span>&copy; 2026 Just In Time Furnace Inc. &middot; <a href="https://justintimefurnace.com/contact/privacy-policy/">Privacy</a></span>
+      <span><a href="https://cleaningdigital.ca/" target="_blank" rel="noopener">Design by Cleaning Digital.</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="m-call"><a href="tel:4033336666">Call 24/7</a><a href="https://justintimefurnace.com/contact/request-a-quote/">Free Quote</a></div>
+
+<script>
+// clock dots from the logo
+(function(){
+  const g=document.getElementById('dots'),cx=300,cy=330,r=250;
+  const cols=['#c1202f','#c1202f','#c1202f','#1d3a6e','#1d3a6e','#1d3a6e','#939598','#939598','#939598'];
+  cols.forEach((c,i)=>{
+    const a=(-165+i*21)*Math.PI/180;
+    const el=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    el.setAttribute('cx',cx+r*Math.cos(a));el.setAttribute('cy',cy+r*Math.sin(a));
+    el.setAttribute('r',15);el.setAttribute('fill',c);el.style.opacity=0;
+    el.style.transition='opacity .4s '+(i*0.12)+'s';g.appendChild(el);
+    requestAnimationFrame(()=>setTimeout(()=>el.style.opacity=.9,80));
+  });
+})();
+// services preview
+const rows=document.querySelectorAll('.svc-row'),imgs=document.querySelectorAll('.svc-preview img'),cap=document.getElementById('capName');
+rows.forEach(r=>r.addEventListener('mouseenter',()=>{
+  rows.forEach(x=>x.classList.remove('on'));r.classList.add('on');
+  imgs.forEach((im,i)=>im.classList.toggle('on',i==r.dataset.img));cap.textContent=r.dataset.name;
+}));
+// review rail
+function rail(d){const el=document.getElementById('rail');el.scrollBy({left:d*(el.querySelector('.rev').offsetWidth+19),behavior:'smooth'})}
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
